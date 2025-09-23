@@ -1,7 +1,10 @@
 #include <iostream>
 #include <clocale>
+#include <queue>
 
 using namespace std;
+
+const int MAX_SIZE = 100;
 
 void head(){
     cout << "+------------------------+" << endl;
@@ -12,10 +15,48 @@ void head(){
     cout << "+------------------------+" << endl;
 }
 
+
 int main(){
+    string input_name;
+    int input_age;
+
     setlocale(LC_ALL, "ru_RU.UTF-8");
     
+    queue<string>start; //0-25
+    queue<string>mid; //26-60
+    queue<string>end; //61+
+
     head();
+
+    cout << "Введите фамилию:> ";
+    cin >> input_name; 
+
+    cout << "Введите возраст:> ";
+    cin >> input_age;
+
+    if(input_age <= 25){
+        start.push(input_name);
+    }
+
+    if(input_age >= 26 && input_age <= 60){
+        mid.push(input_name);
+    }
+
+    if(input_age >= 61){
+        end.push(input_name);
+    }
+
+    cout << "0-25: ";
+    if (!start.empty()) cout << start.front();
+    cout << endl;
+
+    cout << "26-60: ";
+    if (!mid.empty()) cout << mid.front();
+    cout << endl;
+
+    cout << "61+: ";
+    if (!end.empty()) cout << end.front();
+    cout << endl;
     
     return 0;
 }
