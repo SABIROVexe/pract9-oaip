@@ -28,23 +28,32 @@ int main(){
 
     head();
 
-    cout << "Введите фамилию:> ";
-    cin >> input_name; 
+    while (true){
+        cout << "Введите фамилию(stop для выхода из цикла):> ";
+        cin >> input_name; 
 
-    cout << "Введите возраст:> ";
-    cin >> input_age;
+        if(input_name == "stop"){
+            cout << "STOP" << endl;
+            break;
+        }        
 
-    if(input_age <= 25){
-        start.push(input_name);
+        cout << "Введите возраст:> ";
+        cin >> input_age;
+
+        if(input_age <= 25){
+            start.push(input_name);
+        }
+
+        if(input_age >= 26 && input_age <= 60){
+            mid.push(input_name);
+        }
+
+        if(input_age >= 61){
+            end.push(input_name);
+        }
+
     }
-
-    if(input_age >= 26 && input_age <= 60){
-        mid.push(input_name);
-    }
-
-    if(input_age >= 61){
-        end.push(input_name);
-    }
+    
 
     cout << "0-25: ";
     if (!start.empty()) cout << start.front();
