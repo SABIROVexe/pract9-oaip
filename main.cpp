@@ -56,16 +56,25 @@ int main(){
     
 
     cout << "0-25: ";
-    if (!start.empty()) cout << start.front();
+    while(!start.empty()){
+        cout << start.front() << " ";
+        start.pop();
+    }
     cout << endl;
 
     cout << "26-60: ";
-    if (!mid.empty()) cout << mid.front();
+    while(!mid.empty()){
+        cout << mid.front() << " ";
+        mid.pop();
+    }
     cout << endl;
 
     cout << "61+: ";
-    if (!end.empty()) cout << end.front();
+    while(!end.empty()){
+        cout << end.front() << " ";
+        end.pop();
+    }
     cout << endl;
-    
+
     return 0;
 }
