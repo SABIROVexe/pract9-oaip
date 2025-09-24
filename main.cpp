@@ -1,6 +1,7 @@
 #include <iostream>
 #include <clocale>
 #include <queue>
+#include <limits>
 
 using namespace std;
 
@@ -35,10 +36,18 @@ int main(){
         if(input_name == "stop"){
             cout << "STOP" << endl;
             break;
-        }        
+        }   
 
         cout << "Введите возраст:> ";
         cin >> input_age;
+
+        if(cin.fail() || input_age < 0 ){
+            cout << "ОШИБКА! введите корректный возраст" << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            input_name = "";
+        }
+
 
         if(input_age <= 25){
             start.push(input_name);
@@ -51,9 +60,8 @@ int main(){
         if(input_age >= 61){
             end.push(input_name);
         }
-
-    }
-    
+   
+    }  
 
     cout << "0-25: ";
     while(!start.empty()){
