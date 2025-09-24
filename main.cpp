@@ -18,6 +18,10 @@ void head(){
 
 
 int main(){
+    char repeat;
+
+    do{
+
     string input_name;
     int input_age;
 
@@ -83,6 +87,11 @@ int main(){
         end.pop();
     }
     cout << endl;
+
+        cout << "Хотите повторить выполнение программы?(Y/N)" << endl;
+        cout << ":> ";
+        cin >> repeat;
+    }while(repeat = 'Y' || 'y');
 
     return 0;
 }
