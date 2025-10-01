@@ -39,6 +39,7 @@ int main(){
 
         if(input_name == "stop"){
             cout << "STOP" << endl;
+            cout << "+------------------------+" << endl;
             break;
         }   
 
@@ -88,12 +89,15 @@ int main(){
     }
     cout << endl;
 
+        cout << "+------------------------+" << endl;
         cout << "Хотите повторить выполнение программы?(Y/N)" << endl;
         cout << ":> ";
         cin >> repeat;
-        
+
         if(repeat == 'n' || repeat == 'N' ){
-            cout << "До свидания!" << endl;
+            cout << "+-------------+" << endl;
+            cout << "|До свидания! |" << endl;
+            cout << "+-------------+" << endl;
         }
 
     }while(repeat == 'Y' || repeat == 'y');
