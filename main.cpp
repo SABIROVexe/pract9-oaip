@@ -91,7 +91,12 @@ int main(){
         cout << "Хотите повторить выполнение программы?(Y/N)" << endl;
         cout << ":> ";
         cin >> repeat;
-    }while(repeat = 'Y' || 'y');
+        
+        if(repeat == 'n' || repeat == 'N' ){
+            cout << "До свидания!" << endl;
+        }
+
+    }while(repeat == 'Y' || repeat == 'y');
 
     return 0;
 }
